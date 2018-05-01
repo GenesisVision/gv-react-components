@@ -1,23 +1,29 @@
 {
   "compilerOptions": {
-    "outDir": "dist/js",
-    "module": "esnext",
-    "target": "es5",
-    "lib": ["es2015", "dom"],
-    "sourceMap": true,
-    "jsx": "react",
-    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "dist/js",
-    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": ["es2015", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "noUnusedParameters": true,
+    "outDir": "compiled",
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "stripInternal": true,
+    "target": "es5"
   },
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
