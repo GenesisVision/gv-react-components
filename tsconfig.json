@@ -2,7 +2,6 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "declarationDir": "dist/js",
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "importHelpers": true,
@@ -16,7 +15,7 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "compiled",
+    "outDir": "dist",
     "pretty": true,
     "removeComments": true,
     "sourceMap": true,
