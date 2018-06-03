@@ -1,13 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./style.scss";
+import style from "./style.scss";
 
 export interface GVTagProps {
   tag: string;
+  className?: string;
 }
 
-const GVTag: React.SFC<GVTagProps> = ({ tag }) => {
-  return <div className="tag">{tag}</div>;
+const GVTag: React.SFC<GVTagProps> = ({ tag, className }) => {
+  const tagClass: string = className || style.gvTag;
+  return <div className={tagClass}>{tag}</div>;
 };
 
 GVTag.propTypes = {

@@ -1,10 +1,10 @@
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import uglify from "rollup-plugin-uglify";
-import sourceMaps from "rollup-plugin-sourcemaps";
 import { minify } from "uglify-es";
 import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
+import camelcase from "camelcase";
 
 export default {
   input: "./src/index.ts",
@@ -33,13 +33,18 @@ export default {
     }),
     postcss({
       extensions: [".scss"],
-      extract: true, // extracts to `${basename(dest)}.css`
-      //plugins: [autoprefixer, clean],
+      modules: {
+        generateScopedName: "[local]"
+      },
+      namedExports(name) {
+        console.log(name, camelcase(name));
+        return camelcase(name);
+      },
+      extract: true,
+
       writeDefinitions: true
-      // postcssModulesOptions: { ... }
     }),
     uglify({}, minify),
-    sourceMaps(),
     typescript()
   ]
 };
