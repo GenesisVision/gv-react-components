@@ -1,17 +1,12 @@
 {
-  "name": "nkrivous-common",
-  "version": "1.0.0",
+  "name": "nkrivous-react-components",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "styles": "dist/index.css",
   "author": "nkrivous <kolsln@list.ru>",
   "license": "MIT",
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
