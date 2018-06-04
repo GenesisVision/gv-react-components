@@ -6,12 +6,7 @@
   "styles": "dist/index.css",
   "author": "nkrivous <kolsln@list.ru>",
   "license": "MIT",
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
@@ -19,7 +14,7 @@
     "prebuild": "rimraf dist && yarn type-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o docs"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.3",
