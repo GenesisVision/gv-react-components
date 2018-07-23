@@ -13,7 +13,8 @@ const GVTag: React.SFC<GVTagProps> = ({ tag, className }) => {
 };
 
 GVTag.propTypes = {
-  tag: PropTypes.string.isRequired
+  tag: PropTypes.string.isRequired,
+  className: PropTypes.string
 };
 
 export default GVTag;

@@ -6,16 +6,11 @@
   "styles": "dist/index.css",
   "author": "nkrivous <kolsln@list.ru>",
   "license": "MIT",
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
-    "type-sass": "atsm -p 'src/**/*.scss' -c",
+    "type-sass": "atsm -p src/**/*.scss -c",
     "prebuild": "rimraf dist && yarn type-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
@@ -35,7 +30,7 @@
     "@types/query-string": "^5.1.0",
     "@types/react-router-dom": "^4.2.6",
     "@types/storybook__react": "^3.0.7",
-    "awesome-typed-sass-modules": "^1.0.2",
+    "awesome-typed-sass-modules": "^1.0.3",
     "awesome-typescript-loader": "^5.0.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",

@@ -1,1 +1,1 @@
-export const tagList: string;
+export const gvTagList: string;

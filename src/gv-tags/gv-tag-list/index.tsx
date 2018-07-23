@@ -5,18 +5,19 @@ import style from "./style.scss";
 
 export interface GVTagListProps {
   tags: Array<string>;
+  className?: string;
 }
 
-const GVTagList: React.SFC<GVTagListProps> = ({ tags }) => {
+const GVTagList: React.SFC<GVTagListProps> = ({ tags, className }) => {
+  const tagsClass: string = className || style.gvTagList;
   return (
-    <div className={style.tagList}>
-      {tags.map(x => <GVTag key={x} tag={x} />)}
-    </div>
+    <div className={tagsClass}>{tags.map(x => <GVTag key={x} tag={x} />)}</div>
   );
 };
 
 GVTagList.propTypes = {
-  tags: PropTypes.array.isRequired
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  className: PropTypes.string
 };
 
 export default GVTagList;
