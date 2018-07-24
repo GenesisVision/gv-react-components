@@ -1,22 +1,18 @@
 {
-  "name": "nkrivous-react-components",
-  "version": "0.0.3",
+  "name": "gv-react-components",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "styles": "dist/index.css",
-  "author": "nkrivous <kolsln@list.ru>",
+  "author": "nkrivous <nikolai@genesis.vision>",
   "license": "MIT",
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
     "type-sass": "atsm -p src/**/*.scss -c",
-    "prebuild": "rimraf dist && yarn type-sass",
+    "copy-sass": "cpx src/**/*.scss dist/src",
+    "prebuild": "rimraf dist && yarn type-sass && yarn copy-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs"
@@ -41,7 +37,7 @@
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "camelcase": "^5.0.0",
-    "classnames": "^2.2.6",
+    "cpx": "^1.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
@@ -53,7 +49,6 @@
     "rimraf": "^2.6.2",
     "rollup": "^0.59.4",
     "rollup-plugin-commonjs": "^9.1.3",
-    "rollup-plugin-copy": "^0.2.3",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.15.0",
@@ -64,6 +59,7 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "prop-types": "^15.6.1",
     "react": "^16.4.1"
   }

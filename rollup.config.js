@@ -11,16 +11,10 @@ export default {
   output: {
     file: "./dist/index.js",
     format: "es",
-    name: "nkrivous-common",
     sourcemap: true
   },
-  external: ["react", "prop-types"],
+  external: ["react", "prop-types", "classnames"],
   plugins: [
-    // copy({
-    //   "./media/fonts": "dist/fonts",
-    //   "./media/css": "dist/css",
-    //   "./media/img": "dist/img"
-    // }),
     resolve(),
     commonjs({
       namedExports: {
@@ -37,11 +31,9 @@ export default {
         generateScopedName: "[local]"
       },
       namedExports(name) {
-        console.log(name, camelcase(name));
         return camelcase(name);
       },
       extract: true,
-
       writeDefinitions: true
     }),
     uglify({}, minify),
