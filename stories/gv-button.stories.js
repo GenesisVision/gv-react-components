@@ -1,4 +1,6 @@
 import React from "react";
+import { GVButton } from "../dist/index.js";
+
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 

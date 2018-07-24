@@ -3,9 +3,9 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 import style from "./style.scss";
 
-interface GVButtonProps {
+export interface GVButtonProps {
   className?: string;
-  title?: string;
+  title: string;
   disabled?: boolean;
   primary?: boolean;
   secondary?: boolean;
@@ -38,13 +38,13 @@ const GVButton: React.SFC<GVButtonProps> = ({
 };
 
 GVButton.propTypes = {
+  title: PropTypes.string.isRequired,
   className: PropTypes.string,
-  title: PropTypes.string,
   disabled: PropTypes.bool,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   fullWidth: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func.isRequired
 };
 
 GVButton.defaultProps = {
