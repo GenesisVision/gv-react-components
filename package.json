@@ -6,7 +6,12 @@
   "styles": "dist/index.css",
   "author": "nkrivous <kolsln@list.ru>",
   "license": "MIT",
-  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
+  "keywords": [
+    "TypeScript",
+    "Storybook",
+    "StoryShots",
+    "React"
+  ],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
@@ -23,6 +28,7 @@
     "@storybook/addon-storyshots": "^3.4.3",
     "@storybook/addons": "^3.4.3",
     "@storybook/react": "^3.4.3",
+    "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.12",
     "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "^22.2.3",
@@ -35,7 +41,7 @@
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "camelcase": "^5.0.0",
-    "classnames": "^2.2.5",
+    "classnames": "^2.2.6",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
