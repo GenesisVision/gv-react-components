@@ -1,2 +1,3 @@
-# nkrivous-react-components
-Find the storybook on [Github Pages](https://nkrivous.github.io/nkrivous-react-components).
+# gv-react-components
+
+Find the storybook on [Github Pages](https://genesisvision.github.io/gv-react-components).
