@@ -12,6 +12,7 @@
     "test": "jest",
     "type-sass": "atsm -p src/**/*.scss -c",
     "copy-sass": "cpx src/**/*.scss dist/src",
+    "copy-assets": "cpx assets/**/*.* dist/assets",
     "prebuild": "rimraf dist && yarn type-sass && yarn copy-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",

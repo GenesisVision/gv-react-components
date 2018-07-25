@@ -4,34 +4,37 @@ import PropTypes from "prop-types";
 import style from "./style.scss";
 
 export interface GVButtonProps {
-  className?: string;
   title: string;
+  variant: string;
+  color: string;
+  className?: string;
   disabled?: boolean;
-  primary?: boolean;
-  secondary?: boolean;
-  fullWidth?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   children: string | JSX.Element;
 }
 
 const GVButton: React.SFC<GVButtonProps> = ({
   className,
   title,
+  variant,
+  color,
   disabled,
-  primary,
-  secondary,
-  fullWidth,
   onClick,
   children
 }) => {
-  const cn = classnames(style.gvBtn, className, {
-    [style.gvBtnFullWidth]: fullWidth,
-    [style.disabled]: disabled,
-    [style.gvBtnPrimary]: primary,
-    [style.gvBtnSecondary]: secondary
+  const classname = classnames(style.gvBtn, className, {
+    [style.gvBtnPrimary]: color === "primary",
+    [style.gvBtnSecondary]: color === "secondary",
+    [style.gvBtnOutlined]: variant === "outlined",
+    [style.gvBtnContained]: variant === "contained"
   });
   return (
-    <button disabled={disabled} className={cn} onClick={onClick} title={title}>
+    <button
+      disabled={disabled}
+      className={classname}
+      onClick={onClick}
+      title={title}
+    >
       {children}
     </button>
   );
@@ -39,16 +42,16 @@ const GVButton: React.SFC<GVButtonProps> = ({
 
 GVButton.propTypes = {
   title: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(["text", "outlined", "contained"]),
+  color: PropTypes.oneOf(["default", "primary", "secondary"]),
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
 
 GVButton.defaultProps = {
-  primary: true
+  variant: "contained",
+  color: "default"
 };
 
 export default GVButton;
