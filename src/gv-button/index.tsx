@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import style from "./style.scss";
 
 export interface GVButtonProps {
-  title: string;
-  variant: string;
-  color: string;
+  variant?: string;
+  color?: string;
+  title?: string;
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
@@ -41,9 +41,9 @@ const GVButton: React.SFC<GVButtonProps> = ({
 };
 
 GVButton.propTypes = {
-  title: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(["text", "outlined", "contained"]),
-  color: PropTypes.oneOf(["default", "primary", "secondary"]),
+  color: PropTypes.oneOf(["primary", "secondary"]),
+  title: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
@@ -51,7 +51,7 @@ GVButton.propTypes = {
 
 GVButton.defaultProps = {
   variant: "contained",
-  color: "default"
+  color: "primary"
 };
 
 export default GVButton;
