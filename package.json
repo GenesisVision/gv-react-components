@@ -6,6 +6,10 @@
   "styles": "dist/index.css",
   "author": "nkrivous <nikolai@genesis.vision>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GenesisVision/gv-react-components.git"
+  },
   "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
