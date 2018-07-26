@@ -2,12 +2,13 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import style from "./style.scss";
+import { GVTabProps } from "../gv-tab";
 
 export interface GVTabsProps {
   value: string;
   className?: string;
   onChange?: (e: React.SyntheticEvent<EventTarget>, value: string) => void;
-  children: Array<JSX.Element>;
+  children: Array<React.ReactElement<GVTabProps>>;
 }
 
 const GVTabs: React.SFC<GVTabsProps> = ({
