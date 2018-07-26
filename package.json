@@ -10,7 +10,12 @@
     "type": "git",
     "url": "https://github.com/GenesisVision/gv-react-components.git"
   },
-  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
+  "keywords": [
+    "TypeScript",
+    "Storybook",
+    "StoryShots",
+    "React"
+  ],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
@@ -23,6 +28,7 @@
     "build-storybook": "build-storybook -o docs"
   },
   "devDependencies": {
+    "@sambego/storybook-state": "^1.0.7",
     "@storybook/addon-actions": "^3.4.3",
     "@storybook/addon-info": "^3.4.7",
     "@storybook/addon-links": "^3.4.3",
