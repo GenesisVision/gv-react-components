@@ -5,6 +5,9 @@
   color: $text-color;
   padding: 0 1em;
   padding-bottom: 0.2em;
+  &:not(.gv-tab--active) {
+    opacity: 0.4;
+  }
   &--active {
     &::after {
       content: "";
