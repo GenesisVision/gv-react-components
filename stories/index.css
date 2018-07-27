@@ -1,5 +1,7 @@
 body {
   margin: 0;
   padding-top: 1rem;
-  background-color: black;
+  background-color: #131e26;
+  font-family: Montserrat, sans-serif;
+  color: white;
 }
