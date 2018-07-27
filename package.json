@@ -53,6 +53,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "jest-transform-stub": "^1.0.0",
     "node-sass": "^4.9.0",
     "prettier": "^1.12.1",
     "query-string": "^6.0.0",

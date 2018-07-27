@@ -32,6 +32,17 @@ describe("GVButton tests", () => {
     expect(gvButton.find(`.${outlinedClass}`)).toHaveLength(1);
   });
 
+  test("should add outlined class", () => {
+    const gvButton = shallow(<GVButton variant="outlined">button</GVButton>);
+    expect(gvButton.find("button").prop("type")).toEqual("button");
+  });
+
+  test("should add outlined class", () => {
+    const gvButton = shallow(<GVButton variant="outlined">button</GVButton>);
+    gvButton.setProps({ type: "submit" });
+    expect(gvButton.find("button").prop("type")).toEqual("submit");
+  });
+
   test("should call click event", () => {
     const handleClick = jest.fn();
     const gvButton = shallow(<GVButton onClick={handleClick}>button</GVButton>);

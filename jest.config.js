@@ -1,6 +1,7 @@
 module.exports = {
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
+    ".+\\.(png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
   },
   testRegex: "test\\.tsx?$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],

@@ -7,6 +7,7 @@ export interface GVButtonProps {
   variant?: string;
   color?: string;
   title?: string;
+  type?: string;
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
@@ -18,6 +19,7 @@ const GVButton: React.SFC<GVButtonProps> = ({
   title,
   variant,
   color,
+  type,
   disabled,
   onClick,
   children
@@ -34,6 +36,7 @@ const GVButton: React.SFC<GVButtonProps> = ({
       className={classname}
       onClick={onClick}
       title={title}
+      type={type}
     >
       {children}
     </button>
@@ -44,6 +47,7 @@ GVButton.propTypes = {
   variant: PropTypes.oneOf(["text", "outlined", "contained"]),
   color: PropTypes.oneOf(["primary", "secondary"]),
   title: PropTypes.string,
+  type: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
@@ -51,7 +55,8 @@ GVButton.propTypes = {
 
 GVButton.defaultProps = {
   variant: "contained",
-  color: "primary"
+  color: "primary",
+  type: "button"
 };
 
 export default GVButton;
