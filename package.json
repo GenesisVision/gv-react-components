@@ -64,6 +64,7 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-typescript2": "^0.15.0",
     "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-url": "^1.4.0",
     "ts-jest": "^22.4.4",
     "tslib": "^1.9.0",
     "typescript": "^2.8.3",

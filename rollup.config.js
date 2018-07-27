@@ -4,6 +4,7 @@ import uglify from "rollup-plugin-uglify";
 import { minify } from "uglify-es";
 import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
+import url from "rollup-plugin-url";
 import camelcase from "camelcase";
 
 export default {
@@ -15,6 +16,7 @@ export default {
   },
   external: ["react", "prop-types", "classnames"],
   plugins: [
+    url({ limit: 100 * 1024 }),
     resolve(),
     commonjs({
       namedExports: {
