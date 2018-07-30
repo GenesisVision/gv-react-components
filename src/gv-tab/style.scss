@@ -17,4 +17,12 @@
       border-bottom: 0.15em solid $primary-color;
     }
   }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

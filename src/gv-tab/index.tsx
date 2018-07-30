@@ -5,7 +5,7 @@ import React from "react";
 import style from "./style.scss";
 
 export interface GVTabProps {
-  label: string;
+  label: React.ReactNode;
   value: string;
   selected?: boolean;
   className?: string;
@@ -43,7 +43,7 @@ const GVTab: React.SFC<GVTabProps> = ({
 };
 
 GVTab.propTypes = {
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   value: PropTypes.string.isRequired,
   selected: PropTypes.bool,
   className: PropTypes.string,

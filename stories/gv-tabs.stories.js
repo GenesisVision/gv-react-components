@@ -24,3 +24,18 @@ storiesOf("Tabs", module).add(
     );
   })
 );
+
+storiesOf("Tabs", module).add(
+  "Tabs with external link",
+  withInfo()(() => {
+    return (
+      <GVTabs value="investor">
+        <GVTab label="Investor" value="investor" />
+        <GVTab
+          label={<a href="https://example.com">Manager external link</a>}
+          value="manager"
+        />
+      </GVTabs>
+    );
+  })
+);
