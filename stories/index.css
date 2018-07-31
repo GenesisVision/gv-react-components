@@ -5,3 +5,12 @@ body {
   font-family: Montserrat, sans-serif;
   color: white;
 }
+
+.case {
+  display: flex;
+  align-items: baseline;
+}
+
+.example {
+  margin-left: 10rem;
+}

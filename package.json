@@ -19,9 +19,9 @@
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
-    "type-sass": "atsm -p src/**/*.scss -c",
-    "copy-sass": "cpx src/**/*.scss dist/src",
-    "copy-assets": "cpx assets/**/*.* dist/assets",
+    "type-sass": "atsm -p 'src/**/*.scss' -c",
+    "copy-sass": "cpx 'src/**/*.scss' 'dist/src'",
+    "copy-assets": "cpx 'assets/**/*.*' 'dist/assets'",
     "prebuild": "rimraf dist && yarn type-sass && yarn copy-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "formik": "^1.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.4.1"
   }

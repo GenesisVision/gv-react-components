@@ -14,7 +14,7 @@ export default {
     format: "es",
     sourcemap: true
   },
-  external: ["react", "prop-types", "classnames"],
+  external: ["react", "prop-types", "classnames", "formik"],
   plugins: [
     url({ limit: 100 * 1024 }),
     resolve(),
@@ -23,7 +23,8 @@ export default {
         "node_modules/react/index.js": [
           "Component",
           "PropTypes",
-          "createElement"
+          "createElement",
+          "Field"
         ]
       }
     }),
