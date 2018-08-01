@@ -1,0 +1,11 @@
+/src
+/docs
+/node_modules
+/stories
+yarn.lock
+tsconfig.json
+setupTests.ts
+rollup.config.js
+jest.config.js
+.vscode
+.storybook
