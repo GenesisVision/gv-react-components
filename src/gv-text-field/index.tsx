@@ -4,16 +4,18 @@ import PropTypes from "prop-types";
 import style from "./style.scss";
 
 export interface GVTextFieldProps {
+  name: string;
+  type?: string;
+  label?: string;
+  value?: string;
   touched?: boolean;
   error?: string;
   className?: string;
-  onBlur?: (e: any) => void;
-  label?: string;
   adornment?: React.ReactNode;
   adornmentPosition?: "start" | "end";
-  value: string;
-  type?: string;
   disabled?: boolean;
+  onBlur?: (e: any) => void;
+  onChange?: (e: any) => void;
 }
 
 export interface GVTextFieldState {
@@ -121,9 +123,9 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
 }
 
 GVTextField.propTypes = {
+  name: PropTypes.string.isRequired,
   type: PropTypes.string,
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
   value: PropTypes.string,
   touched: PropTypes.bool,
   error: PropTypes.string,

@@ -57,8 +57,9 @@ $invalid-color: red;
     position: absolute;
     left: 0;
     bottom: -15px;
-    font-size: 0.5em;
+    font-size: 0.7em;
     color: $invalid-color;
+    backface-visibility: hidden;
   }
 
   &__input {

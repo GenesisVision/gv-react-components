@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { Field } from "formik";
 import { GVTextFieldProps } from "../gv-text-field";
@@ -27,6 +28,11 @@ const GVFormikField: React.SFC<GVFormikFieldProps> = ({
       }}
     />
   );
+};
+
+GVFormikField.propTypes = {
+  component: PropTypes.element,
+  name: PropTypes.string
 };
 
 export default GVFormikField;
