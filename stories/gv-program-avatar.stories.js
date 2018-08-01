@@ -2,6 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import React, { Fragment } from "react";
+import avatar from "./manager-avatar.png";
 
 import { GVProgramAvatar } from "../dist/index.js";
 
@@ -23,6 +24,7 @@ storiesOf("Program Avatar", module).add(
       url="https://example.com/1.png"
       level="7"
       alt="John Smith"
+      errorImage={avatar}
     />
   ))
 );
