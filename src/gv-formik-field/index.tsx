@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Field } from "formik";
-import { GVTextFieldProps } from "../gv-text-field";
+//import { GVTextFieldProps } from "../gv-text-field";
 
 export interface GVFormikFieldProps {
-  component: new () => React.Component<GVTextFieldProps>;
+  component: string;
   name: string;
 }
 
