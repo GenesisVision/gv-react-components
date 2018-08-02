@@ -8,7 +8,7 @@ import { withFormik } from "formik";
 storiesOf("Form", module).add(
   "Standalone Text Input",
   withInfo()(() => (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div style={{ display: "flex", flexDirection: "column", width: "300px" }}>
       <GVTextField
         type="text"
         name="default"
