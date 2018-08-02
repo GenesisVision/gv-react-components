@@ -23,9 +23,9 @@ export default {
         "node_modules/react/index.js": [
           "Component",
           "PropTypes",
-          "createElement",
-          "Field"
-        ]
+          "createElement"
+        ],
+        "node_modules/formik/dist/index.js": ["Field"]
       }
     }),
     postcss({
