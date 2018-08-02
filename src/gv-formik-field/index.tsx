@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Field } from "formik";
-//import { GVTextFieldProps } from "../gv-text-field";
 
 export interface GVFormikFieldProps {
-  CustomComponent: any;
+  component: any;
   name: string;
 }
 
 const GVFormikField: React.SFC<GVFormikFieldProps> = ({
-  CustomComponent,
+  component: Component,
   name,
   ...props
 }) => {
@@ -18,7 +17,7 @@ const GVFormikField: React.SFC<GVFormikFieldProps> = ({
       name={name}
       render={({ field, form }: any) => {
         return (
-          <CustomComponent
+          <Component
             {...field}
             {...props}
             touched={form.touched[field.name]}
@@ -31,7 +30,7 @@ const GVFormikField: React.SFC<GVFormikFieldProps> = ({
 };
 
 GVFormikField.propTypes = {
-  CustomComponent: PropTypes.any,
+  component: PropTypes.any,
   name: PropTypes.string
 };
 
