@@ -6,7 +6,7 @@ import style from "./style.scss";
 export interface GVProgramAvatarProps {
   url: string;
   alt: string;
-  level: string;
+  level: number;
   errorImage?: string;
   className?: string;
   imageClassName?: string;
@@ -43,7 +43,7 @@ const GVProgramAvatar: React.SFC<GVProgramAvatarProps> = ({
 GVProgramAvatar.propTypes = {
   url: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  level: PropTypes.string.isRequired,
+  level: PropTypes.number.isRequired,
   errorImage: PropTypes.string,
   className: PropTypes.string,
   imageClassName: PropTypes.string,

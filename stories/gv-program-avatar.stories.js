@@ -11,7 +11,7 @@ storiesOf("Program Avatar", module).add(
   withInfo()(() => (
     <GVProgramAvatar
       url="https://static8.depositphotos.com/1000419/948/v/950/depositphotos_9489492-stock-illustration-valentine-tree-with-hearts-for.jpg"
-      level="7"
+      level={7}
       alt="John Smith"
     />
   ))
@@ -22,7 +22,7 @@ storiesOf("Program Avatar", module).add(
   withInfo()(() => (
     <GVProgramAvatar
       url="https://example.com/1.png"
-      level="7"
+      level={7}
       alt="John Smith"
       errorImage={avatar}
     />
