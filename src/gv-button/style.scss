@@ -45,6 +45,22 @@
     }
   }
 
+  &--text {
+    &.gv-btn--primary {
+      color: $primary-color;
+    }
+    &:hover:not(:disabled) {
+      &.gv-btn--primary {
+        background-color: transparent;
+        color: rgba(darken($primary-color, 10%), 0.9);
+      }
+      &.gv-btn--secondary {
+        background-color: transparent;
+        color: rgba(darken($text-color, 10%), 0.9);
+      }
+    }
+  }
+
   &--contained {
     border-radius: 2em;
     &.gv-btn--primary {
