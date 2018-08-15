@@ -27,6 +27,7 @@ const GVButton: React.SFC<GVButtonProps> = ({
   const classname = classnames(style.gvBtn, className, {
     [style.gvBtnPrimary]: color === "primary",
     [style.gvBtnSecondary]: color === "secondary",
+    [style.gvBtnText]: variant === "text",
     [style.gvBtnOutlined]: variant === "outlined",
     [style.gvBtnContained]: variant === "contained"
   });
