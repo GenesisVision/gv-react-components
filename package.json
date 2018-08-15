@@ -10,7 +10,12 @@
     "type": "git",
     "url": "https://github.com/GenesisVision/gv-react-components.git"
   },
-  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
+  "keywords": [
+    "TypeScript",
+    "Storybook",
+    "StoryShots",
+    "React"
+  ],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
@@ -46,6 +51,7 @@
     "cpx": "^1.5.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "formik": "^1.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "jest-transform-stub": "^1.0.0",
