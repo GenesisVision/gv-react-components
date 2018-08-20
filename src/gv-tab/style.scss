@@ -2,7 +2,7 @@
 
 .gv-tab {
   cursor: pointer;
-  color: $text-color;
+  color: $text-light-color;
   padding: 0 1em;
   padding-bottom: 0.2em;
   &:not(.gv-tab--active) {
@@ -19,7 +19,7 @@
   }
 
   a {
-    color: $text-color;
+    color: $text-light-color;
     text-decoration: none;
     &:hover {
       text-decoration: none;
