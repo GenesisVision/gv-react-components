@@ -1,8 +1,6 @@
-import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
-import React, { Fragment } from "react";
-import avatar from "./manager-avatar.png";
+import React from "react";
 
 import { GVProgramAvatar } from "../dist/index.js";
 

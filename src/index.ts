@@ -7,8 +7,9 @@ import GVProgramAvatar, { GVProgramDefaultAvatar } from "./gv-program-avatar";
 import GVTextField from "./gv-text-field";
 import GVFormikField from "./gv-formik-field";
 
-import "./gv-styles/styles.scss";
+import GVProgramPeriod from "./gv-program-period";
 
+import "./gv-styles/styles.scss";
 export {
   GVTag,
   GVTagList,
@@ -18,5 +19,6 @@ export {
   GVProgramAvatar,
   GVProgramDefaultAvatar,
   GVFormikField,
-  GVTextField
+  GVTextField,
+  GVProgramPeriod
 };
