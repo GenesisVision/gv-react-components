@@ -65,7 +65,17 @@ class GVProgramAvatar extends React.Component<
         })}
       >
         {this.renderImage()}
-        <span className={classnames(style.programAvatarLevel, levelClassName)}>
+        <span
+          className={classnames(style.programAvatarLevel, levelClassName, {
+            [style.programAvatarLevel1]: level === 1,
+            [style.programAvatarLevel2]: level === 2,
+            [style.programAvatarLevel3]: level === 3,
+            [style.programAvatarLevel4]: level === 4,
+            [style.programAvatarLevel5]: level === 5,
+            [style.programAvatarLevel6]: level === 6,
+            [style.programAvatarLevel7]: level === 7
+          })}
+        >
           {level}
         </span>
       </div>
