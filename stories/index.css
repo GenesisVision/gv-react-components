@@ -14,3 +14,15 @@ body {
 .example {
   margin-left: 10rem;
 }
+
+.flex {
+  display: flex;
+}
+
+.vertical-center {
+  align-items: center;
+}
+
+.padding {
+  padding: 1em;
+}

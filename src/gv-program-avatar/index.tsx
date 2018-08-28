@@ -2,52 +2,90 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import style from "./style.scss";
+import GVProgramDefaultAvatar from "./gv-propgram-default-avatar";
 
 export interface GVProgramAvatarProps {
   url: string;
   alt: string;
   level: number;
-  errorImage?: string;
+  size: string;
   className?: string;
   imageClassName?: string;
   levelClassName?: string;
 }
 
-const GVProgramAvatar: React.SFC<GVProgramAvatarProps> = ({
-  url,
-  alt,
-  level,
-  errorImage,
-  className,
-  imageClassName,
-  levelClassName
-}) => {
-  const handleError = (e: any) => {
-    if (errorImage) e.target.src = errorImage;
+export interface GVProgramAvatarState {
+  errored: boolean;
+}
+
+class GVProgramAvatar extends React.Component<
+  GVProgramAvatarProps,
+  GVProgramAvatarState
+> {
+  static propTypes: any;
+  static defaultProps: any;
+
+  constructor(props: GVProgramAvatarProps) {
+    super(props);
+
+    this.state = {
+      errored: false
+    };
+  }
+  handleError = (e: any) => {
+    e.target.onerror = null;
+    this.setState({ errored: true });
   };
-  return (
-    <div className={classnames(className || style.programAvatar)}>
+
+  renderImage = () => {
+    const { url, alt, imageClassName } = this.props;
+    if (this.state.errored || url === undefined)
+      return (
+        <GVProgramDefaultAvatar title={alt} imageClassName={imageClassName} />
+      );
+    return (
       <img
-        className={imageClassName || style.programAvatarImage}
+        className={classnames(imageClassName || style.programAvatarImage)}
         src={url}
         alt={alt}
-        onError={handleError}
+        onError={this.handleError}
       />
-      <span className={levelClassName || style.programAvatarLevel}>
-        {level}
-      </span>
-    </div>
-  );
-};
+    );
+  };
+
+  render() {
+    const { level, size, className, levelClassName } = this.props;
+
+    return (
+      <div
+        className={classnames(style.programAvatar, className, {
+          [style.programAvatarSmall]: size === "small",
+          [style.programAvatarMedium]: size === "medium",
+          [style.programAvatarBig]: size === "big"
+        })}
+      >
+        {this.renderImage()}
+        <span className={classnames(style.programAvatarLevel, levelClassName)}>
+          {level}
+        </span>
+      </div>
+    );
+  }
+}
 
 GVProgramAvatar.propTypes = {
   url: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
-  errorImage: PropTypes.string,
+  size: PropTypes.oneOf(["small", "medium", "big"]),
   className: PropTypes.string,
   imageClassName: PropTypes.string,
   levelClassName: PropTypes.string
 };
 
+GVProgramAvatar.defaultProps = {
+  size: "small"
+};
+
+export { GVProgramDefaultAvatar };
 export default GVProgramAvatar;
