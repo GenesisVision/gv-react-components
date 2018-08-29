@@ -14,7 +14,7 @@ export default {
     format: "es",
     sourcemap: true
   },
-  external: ["react", "prop-types", "classnames", "formik"],
+  external: ["react", "prop-types", "classnames", "formik", "moment"],
   plugins: [
     url({ limit: 100 * 1024 }),
     resolve(),
