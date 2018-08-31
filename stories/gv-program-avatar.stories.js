@@ -21,7 +21,6 @@ storiesOf("Program Avatar", module).add(
           url="https://example.com/1.png"
           level={7}
           alt="John Smith"
-          errorImage={avatar}
         />
         Default / Broken url
       </div>
