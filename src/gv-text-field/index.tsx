@@ -11,6 +11,11 @@ export interface GVTextFieldProps {
   touched?: boolean;
   error?: string;
   className?: string;
+  wrapperClassName?: string;
+  inputClassName?: string;
+  labelClassName?: string;
+  errorClassName?: string;
+  adornmentClassName?: string;
   adornment?: React.ReactNode;
   adornmentPosition?: "start" | "end";
   disabled?: boolean;
@@ -49,19 +54,30 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
   renderError = () =>
     this.props.touched &&
     this.props.error && (
-      <div className={style.gvTextFieldError}>{this.props.error}</div>
+      <div
+        className={classnames(
+          style.gvTextFieldError,
+          this.props.errorClassName
+        )}
+      >
+        {this.props.error}
+      </div>
     );
 
   renderLabel = () => {
     if (!this.props.label) return null;
     return (
       <label
-        className={classnames(style.gvTextFieldLabel, {
-          [style.gvTextFieldLabelShrink]:
-            this.state.focused ||
-            this.props.adornment ||
-            (this.props.value && this.props.value.length > 0)
-        })}
+        className={classnames(
+          style.gvTextFieldLabel,
+          this.props.labelClassName,
+          {
+            [style.gvTextFieldLabelShrink]:
+              this.state.focused ||
+              this.props.adornment ||
+              (this.props.value && this.props.value.length > 0)
+          }
+        )}
       >
         {this.props.label}
       </label>
@@ -69,11 +85,11 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
   };
 
   renderAdornment = () => {
-    const { adornment, adornmentPosition } = this.props;
+    const { adornment, adornmentPosition, adornmentClassName } = this.props;
     if (!adornment) return null;
     return (
       <div
-        className={classnames(style.gvTextFieldAdornment, {
+        className={classnames(style.gvTextFieldAdornment, adornmentClassName, {
           [style.gvTextFieldAdornmentStart]: adornmentPosition === "start",
           [style.gvTextFieldAdornmentEnd]: adornmentPosition === "end"
         })}
@@ -87,6 +103,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
     const {
       onBlur,
       className,
+      inputClassName,
       touched,
       error,
       adornment,
@@ -95,7 +112,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
     } = this.props;
     return (
       <input
-        className={classnames(style.gvTextFieldInput)}
+        className={classnames(style.gvTextFieldInput, inputClassName)}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
         {...otherProps}
@@ -103,13 +120,20 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
     );
   };
   render() {
+    const {
+      className,
+      wrapperClassName,
+      disabled,
+      touched,
+      error
+    } = this.props;
     return (
-      <div className={style.gvTextFieldWrapper}>
+      <div className={classnames(style.gvTextFieldWrapper, wrapperClassName)}>
         {this.renderLabel()}
         <div
-          className={classnames(this.props.className || style.gvTextField, {
-            [style.gvTextFieldDisabled]: this.props.disabled,
-            [style.gvTextFieldInvalid]: this.props.touched && this.props.error,
+          className={classnames(style.gvTextField, className, {
+            [style.gvTextFieldDisabled]: disabled,
+            [style.gvTextFieldInvalid]: touched && error,
             [style.gvTextFieldFocused]: this.state.focused
           })}
         >
@@ -130,6 +154,11 @@ GVTextField.propTypes = {
   touched: PropTypes.bool,
   error: PropTypes.string,
   className: PropTypes.string,
+  wrapperClassName: PropTypes.string,
+  inputClassName: PropTypes.string,
+  labelClassName: PropTypes.string,
+  errorClassName: PropTypes.string,
+  adornmentClassName: PropTypes.string,
   placeholder: PropTypes.string,
   adornment: PropTypes.node,
   adornmentPosition: PropTypes.oneOf(["start", "end"]),

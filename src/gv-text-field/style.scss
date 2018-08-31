@@ -75,6 +75,9 @@
     &:focus {
       outline: none;
     }
+    &:disabled {
+      color: $text-dark-color;
+    }
   }
 
   &__label {
@@ -84,8 +87,7 @@
     position: absolute;
     transform: translate(0, 24px) scale(1);
     transform-origin: top left;
-    color: $label-color;
-    opacity: 0.5;
+    color: $text-dark-color;
     padding: 0;
     &--shrink {
       transform: scale(0.75) translate(0px, 1.5px);
@@ -96,7 +98,6 @@
     display: flex;
     max-height: 2em;
     align-items: center;
-    opacity: 0.5;
     &--start {
       order: 0;
       margin-right: 8px;
