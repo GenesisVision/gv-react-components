@@ -1,17 +1,16 @@
 $primary-color: #03bdaf;
 $secondary-color: #2a353f;
-$danger-color: #eb3b5a;
-$success-color: #2ebd85;
+$negative-color: #eb3b5a;
+$positive-color: #2ebd85;
 
 $text-color: #e8eff3;
 $text-light-color: $text-color;
-$text-dark-color: rgba($text-color, 0.5);
+$text-dark-color: #5c636a;
 
-$label-color: rgba($text-color, 0.3);
+$label-color: #6b747b;
 
 $background-color: #131e26;
 $panel-background-color: #1b252d;
-$border-color: #ccc;
 
 $level-color-1: #373867;
 $level-color-2: #4a5090;

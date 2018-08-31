@@ -45,7 +45,7 @@
 
   &--invalid {
     &::after {
-      border-bottom-color: $danger-color;
+      border-bottom-color: $negative-color;
       transform: scaleX(1);
     }
   }
@@ -55,7 +55,7 @@
     left: 0;
     bottom: -15px;
     font-size: 0.7em;
-    color: $danger-color;
+    color: $negative-color;
     backface-visibility: hidden;
   }
 

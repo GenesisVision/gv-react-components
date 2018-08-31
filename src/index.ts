@@ -8,6 +8,7 @@ import GVTextField from "./gv-text-field";
 import GVFormikField from "./gv-formik-field";
 
 import GVProgramPeriod from "./gv-program-period";
+import * as GVColors from "./gv-styles/colors";
 
 import "./gv-styles/styles.scss";
 export {
@@ -20,5 +21,6 @@ export {
   GVProgramDefaultAvatar,
   GVFormikField,
   GVTextField,
-  GVProgramPeriod
+  GVProgramPeriod,
+  GVColors
 };
