@@ -5,13 +5,15 @@ export const $negativeColor = "#eb3b5a";
 export const $positiveColor = "#2ebd85";
 
 export const $textColor = "#e8eff3";
-export const $textLightColor = $textColor;
+export const $textLightColor = "#fff";
 export const $textDarkColor = "#5c636a";
 
 export const $labelColor = "#6b747b";
 
 export const $backgroundColor = "#131e26";
 export const $panelBackgroundColor = "#1b252d";
+export const $positiveBackgroundColor = "#1d383a";
+export const $negativeBackgroundColor = "#312934";
 
 export const $levelColor1 = "#373867";
 export const $levelColor2 = "#4a5090";
