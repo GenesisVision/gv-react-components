@@ -1,3 +1,9 @@
+@mixin media-breakpoint-phone() {
+  @media (min-width: 322px) {
+    @content;
+  }
+}
+
 @mixin media-breakpoint-landscape-phone() {
   @media (min-width: 576px) {
     @content;
@@ -10,14 +16,20 @@
   }
 }
 
-@mixin media-breakpoint-desktop() {
+@mixin media-breakpoint-landscape-tablet() {
   @media (min-width: 992px) {
     @content;
   }
 }
 
-@mixin media-breakpoint-large-desktop() {
+@mixin media-breakpoint-desktop() {
   @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-large-desktop() {
+  @media (min-width: 1920px) {
     @content;
   }
 }
