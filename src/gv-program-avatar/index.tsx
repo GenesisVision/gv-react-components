@@ -5,10 +5,10 @@ import style from "./style.scss";
 import GVProgramDefaultAvatar from "./gv-propgram-default-avatar";
 
 export interface GVProgramAvatarProps {
-  url: string;
+  url?: string;
   alt: string;
   level: number;
-  size: string;
+  size?: string;
   className?: string;
   imageClassName?: string;
   levelClassName?: string;
@@ -39,7 +39,7 @@ class GVProgramAvatar extends React.Component<
 
   renderImage = () => {
     const { url, alt, imageClassName } = this.props;
-    if (this.state.errored || url === undefined)
+    if (this.state.errored || url === undefined || url === null)
       return (
         <GVProgramDefaultAvatar title={alt} imageClassName={imageClassName} />
       );
@@ -84,7 +84,7 @@ class GVProgramAvatar extends React.Component<
 }
 
 GVProgramAvatar.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   alt: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
   size: PropTypes.oneOf(["small", "medium", "big"]),

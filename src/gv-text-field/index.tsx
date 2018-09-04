@@ -103,7 +103,11 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
     const {
       onBlur,
       className,
+      wrapperClassName,
       inputClassName,
+      labelClassName,
+      errorClassName,
+      adornmentClassName,
       touched,
       error,
       adornment,
