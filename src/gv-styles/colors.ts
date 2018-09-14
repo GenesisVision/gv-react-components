@@ -4,11 +4,14 @@ export const $secondaryColor = "#2a353f";
 export const $negativeColor = "#eb3b5a";
 export const $positiveColor = "#2ebd85";
 
-export const $textColor = "#e8eff3";
-export const $textLightColor = "#fff";
+export const $textColor = "#8d9397";
+export const $textLightColor = "#e8eff3";
 export const $textDarkColor = "#5c636a";
+export const $textAccentColor = "#fff";
 
 export const $labelColor = "#6b747b";
+
+export const $separatorColor = "#28323b";
 
 export const $backgroundColor = "#131e26";
 export const $panelBackgroundColor = "#1b252d";
