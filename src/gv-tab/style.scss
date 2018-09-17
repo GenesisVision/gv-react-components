@@ -3,12 +3,14 @@
 .gv-tab {
   cursor: pointer;
   color: $text-color;
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1px;
   padding: 0 1em;
   padding-bottom: 0.2em;
-  &:not(.gv-tab--active) {
-    opacity: 0.4;
-  }
   &--active {
+    color: $text-light-color;
     &::after {
       content: "";
       display: block;

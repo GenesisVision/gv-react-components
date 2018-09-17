@@ -61,8 +61,12 @@
 
   &__input {
     order: 1;
-    font: inherit;
-    color: $text-color;
+    color: $text-light-color;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.38;
+    letter-spacing: 0.2px;
     border: 0;
     margin: 0;
     padding: 6px 0 7px;
@@ -87,7 +91,10 @@
     position: absolute;
     transform: translate(0, 24px) scale(1);
     transform-origin: top left;
-    color: $text-dark-color;
+    color: $label-color;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.4px;
     padding: 0;
     &--shrink {
       transform: scale(0.75) translate(0px, 1.5px);
