@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import GVTabs from ".";
-import { GVTab } from "..";
+import GVTab from "./gv-tab";
 
 describe("GVTabs tests", () => {
   test("should render tabs", () => {
