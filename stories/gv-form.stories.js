@@ -52,21 +52,24 @@ storiesOf("Form", module).add(
         type="text"
         name="adornment"
         label="Adornment"
+        value="1000"
         adornment="GVT"
         autoComplete="off"
-        InputComponent={NumberFormat}
-        decimalScale={8}
+        onChange={() => {}}
       />
       <br />
       <GVTextField
         type="text"
         name="adornmentStart"
-        label="Value USD"
+        label="Using NumberFormat"
         adornment="$"
         adornmentPosition="start"
-        value="1 000"
-        onChange={() => {}}
+        value="1000"
+        InputComponent={NumberFormat}
         autoComplete="off"
+        onChange={() => {}}
+        decimalScale={8}
+        thousandSeparator=", "
       />
     </div>
   ))
