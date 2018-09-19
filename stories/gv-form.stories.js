@@ -4,6 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import { GVTextField, GVFormikField } from "../dist/index.js";
 import { withFormik } from "formik";
+import NumberFormat from "react-number-format";
 
 storiesOf("Form", module).add(
   "Standalone Text Input",
@@ -53,6 +54,8 @@ storiesOf("Form", module).add(
         label="Adornment"
         adornment="GVT"
         autoComplete="off"
+        InputComponent={NumberFormat}
+        decimalScale={8}
       />
       <br />
       <GVTextField

@@ -1,6 +1,7 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 import GVTextField from ".";
+import NumberFormat from "react-number-format";
 
 describe("GVTextField tests", () => {
   test("should render text field", () => {
@@ -54,5 +55,12 @@ describe("GVTextField tests", () => {
     textField.find("input").simulate("change", "7");
     expect(handleChange).toBeCalled();
     expect(handleChange.mock.calls[0][0]).toBe("7");
+  });
+
+  test("should render Custom Input Component", () => {
+    const textField = shallow(
+      <GVTextField name="textInput" InputComponent={NumberFormat} />
+    );
+    expect(textField.find(NumberFormat)).toHaveLength(1);
   });
 });

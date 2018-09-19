@@ -10,12 +10,7 @@
     "type": "git",
     "url": "https://github.com/GenesisVision/gv-react-components.git"
   },
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
@@ -60,6 +55,7 @@
     "prettier": "^1.12.1",
     "query-string": "^6.0.0",
     "react-dom": "^16.4.0",
+    "react-number-format": "^3.6.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.59.4",
     "rollup-plugin-commonjs": "^9.1.3",

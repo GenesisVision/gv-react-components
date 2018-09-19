@@ -10,15 +10,16 @@ export interface GVTextFieldProps {
   value?: string;
   touched?: boolean;
   error?: string;
+  InputComponent: React.ComponentType<any> | string;
+  adornment?: React.ReactNode;
+  adornmentPosition?: "start" | "end";
+  disabled?: boolean;
   className?: string;
   wrapperClassName?: string;
   inputClassName?: string;
   labelClassName?: string;
   errorClassName?: string;
   adornmentClassName?: string;
-  adornment?: React.ReactNode;
-  adornmentPosition?: "start" | "end";
-  disabled?: boolean;
   onBlur?: (e: any) => void;
   onChange?: (e: any) => void;
 }
@@ -101,6 +102,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
 
   renderInput = () => {
     const {
+      //type,
       onBlur,
       className,
       wrapperClassName,
@@ -110,12 +112,23 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
       adornmentClassName,
       touched,
       error,
+      InputComponent,
       adornment,
       adornmentPosition,
       ...otherProps
     } = this.props;
+
+    // let inputProps: any = {
+    //   className: classnames(style.gvTextFieldInput, inputClassName),
+    //   onFocus: this.handleFocus,
+    //   onBlur: this.handleBlur,
+    //   ...otherProps
+    // };
+    // if (InputComponent === "input") {
+    //   inputProps.type = type;
+    // }
     return (
-      <input
+      <InputComponent
         className={classnames(style.gvTextFieldInput, inputClassName)}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
@@ -157,22 +170,28 @@ GVTextField.propTypes = {
   value: PropTypes.string,
   touched: PropTypes.bool,
   error: PropTypes.string,
+  InputComponent: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func,
+    PropTypes.string
+  ]).isRequired,
+  placeholder: PropTypes.string,
+  adornment: PropTypes.node,
+  adornmentPosition: PropTypes.oneOf(["start", "end"]),
   className: PropTypes.string,
   wrapperClassName: PropTypes.string,
   inputClassName: PropTypes.string,
   labelClassName: PropTypes.string,
   errorClassName: PropTypes.string,
   adornmentClassName: PropTypes.string,
-  placeholder: PropTypes.string,
-  adornment: PropTypes.node,
-  adornmentPosition: PropTypes.oneOf(["start", "end"]),
   onChange: PropTypes.func,
   onBlur: PropTypes.func
 };
 
 GVTextField.defaultProps = {
   type: "text",
-  adornmentPosition: "end"
+  adornmentPosition: "end",
+  InputComponent: "input"
 };
 
 export default GVTextField;
