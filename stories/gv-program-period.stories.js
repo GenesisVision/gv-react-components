@@ -7,49 +7,78 @@ import React from "react";
 
 import { GVProgramPeriod } from "../dist";
 
-const date = moment();
-const startDate = date.subtract(1, "days").format("YYYY-MM-DD");
-const endDate = date.add(2, "days").format("YYYY-MM-DD");
+const startDate = moment()
+  .subtract(1, "days")
+  .format("YYYY-MM-DD");
+const endDate = moment()
+  .add(5, "days")
+  .format("YYYY-MM-DD");
 
 storiesOf("Program Period", module).add(
   "Pie",
-  withState({ start: startDate, end: endDate })(({ store }) =>
-    withInfo()(() => {
-      const handleChangeStart = e => {
-        store.set({ start: e.target.value });
-      };
-      const handleChangeEnd = e => {
-        store.set({ end: e.target.value });
-      };
-
-      return (
-        <div className="padding">
-          Start:{" "}
-          <input
-            type="date"
-            value={store.state.start}
-            onChange={handleChangeStart}
-          />
-          End:{" "}
-          <input
-            type="date"
-            value={store.state.end}
-            onChange={handleChangeEnd}
-          />
-          <div className="flex vertical-center">
-            Result:{" "}
-            <GVProgramPeriod
-              className="period-pie"
-              start={new Date(store.state.start)}
-              end={new Date(store.state.end)}
-            />
-            <GVProgramPeriod
-              start={new Date(store.state.start)}
-              end={new Date(store.state.end)}
-            />
+  withState({ valueDate: moment().format("YYYY-MM-DD"), valueNumber: 7 })(
+    ({ store }) =>
+      withInfo()(() => {
+        const handleChangeValueDate = e => {
+          store.set({ valueDate: e.target.value });
+        };
+        const handleChangeValueNumber = e => {
+          store.set({ valueNumber: +e.target.value });
+        };
+        return (
+          <div>
+            <div className="padding">
+              <h2>Dates</h2>
+              <div className="margin-bottom">
+                <div className="margin-bottom">
+                  Start: {startDate} | End: {endDate}
+                </div>
+                <div className="margin-bottom">
+                  Value:{" "}
+                  <input
+                    type="date"
+                    value={store.state.valueDate}
+                    onChange={handleChangeValueDate}
+                  />
+                </div>
+                <div className="flex vertical-center">
+                  Result:{" "}
+                  <GVProgramPeriod
+                    className="period-pie"
+                    value={new Date(store.state.valueDate)}
+                    start={new Date(startDate)}
+                    end={new Date(endDate)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="padding">
+              <h2>Numbers</h2>
+              <h2>Dates</h2>
+              <div className="margin-bottom">
+                <div className="margin-bottom">
+                  Start: {1} | End: {10}
+                </div>
+                <div className="margin-bottom">
+                  Value:{" "}
+                  <input
+                    type="number"
+                    value={store.state.valueNumber}
+                    onChange={handleChangeValueNumber}
+                  />
+                </div>
+                <div className="flex vertical-center">
+                  Result:{" "}
+                  <GVProgramPeriod
+                    value={store.state.valueNumber}
+                    start={1}
+                    end={10}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      );
-    })
+        );
+      })
   )
 );

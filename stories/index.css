@@ -23,6 +23,10 @@ body {
   align-items: center;
 }
 
+.margin-bottom {
+  margin-bottom: 1em;
+}
+
 .padding {
   padding: 1em;
 }
