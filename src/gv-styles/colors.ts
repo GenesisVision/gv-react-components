@@ -10,7 +10,7 @@ export const $textDarkColor = "#5c636a";
 export const $textAccentColor = "#fff";
 
 export const $labelColor = "#6b747b";
-
+export const $switchHandlerColor = $textAccentColor;
 export const $separatorColor = "#28323b";
 
 export const $backgroundColor = "#131e26";

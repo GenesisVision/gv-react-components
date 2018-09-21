@@ -102,7 +102,6 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
 
   renderInput = () => {
     const {
-      //type,
       onBlur,
       className,
       wrapperClassName,
@@ -117,16 +116,6 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
       adornmentPosition,
       ...otherProps
     } = this.props;
-
-    // let inputProps: any = {
-    //   className: classnames(style.gvTextFieldInput, inputClassName),
-    //   onFocus: this.handleFocus,
-    //   onBlur: this.handleBlur,
-    //   ...otherProps
-    // };
-    // if (InputComponent === "input") {
-    //   inputProps.type = type;
-    // }
     return (
       <InputComponent
         className={classnames(style.gvTextFieldInput, inputClassName)}

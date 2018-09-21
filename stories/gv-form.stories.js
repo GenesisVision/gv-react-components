@@ -2,7 +2,12 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
-import { GVTextField, GVFormikField } from "../dist/index.js";
+import {
+  GVTextField,
+  GVFormikField,
+  GVButton,
+  GVSwitch
+} from "../dist/index.js";
 import { withFormik } from "formik";
 import NumberFormat from "react-number-format";
 
@@ -94,7 +99,16 @@ const LoginForm = ({ handleSubmit }) => {
         adornment={<a href="example.com">forgot?</a>}
         adornmentPosition="end"
       />
-      <input type="submit" />
+      <GVFormikField
+        type="checkbox"
+        color="primary"
+        name="rememberMe"
+        label="remember me?"
+        component={GVSwitch}
+      />
+      <GVButton type="submit" color="primary">
+        Submit
+      </GVButton>
     </form>
   );
 };
@@ -103,7 +117,8 @@ const FormFormik = withFormik({
   displayName: "login",
   mapPropsToValues: () => ({
     email: "",
-    password: ""
+    password: "",
+    rememberMe: true
   }),
   validate: values => {
     let errors = {};
@@ -114,6 +129,8 @@ const FormFormik = withFormik({
     ) {
       errors.email = "Invalid email address";
     }
+    if (values.rememberMe === false)
+      errors.rememberMe = "rememberMe is required";
     return errors;
   },
   handleSubmit: (values, { props, setSubmitting }) => {
