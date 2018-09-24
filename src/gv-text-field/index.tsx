@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import style from "./style.scss";
+import GVTextArea from "./gv-text-area";
 
 export interface GVTextFieldProps {
   name: string;
@@ -102,6 +103,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
 
   renderInput = () => {
     const {
+      type,
       onBlur,
       className,
       wrapperClassName,
@@ -116,8 +118,17 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
       adornmentPosition,
       ...otherProps
     } = this.props;
+    let Input;
+    switch (type) {
+      case "textarea":
+        Input = GVTextArea;
+        break;
+      default:
+        Input = InputComponent;
+    }
     return (
-      <InputComponent
+      <Input
+        type={type}
         className={classnames(style.gvTextFieldInput, inputClassName)}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}

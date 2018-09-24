@@ -1,7 +1,8 @@
-import React from "react";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
+import React from "react";
+
 import {
   GVTextField,
   GVFormikField,
@@ -76,40 +77,69 @@ storiesOf("Form", module).add(
         decimalScale={8}
         thousandSeparator=", "
       />
+      <br />
+
+      <GVTextField
+        type="textarea"
+        name="textArea"
+        label="Text Area"
+        value={`text\narea`}
+      />
+      <br />
     </div>
   ))
 );
 
 const LoginForm = ({ handleSubmit }) => {
   return (
-    <form id="form" onSubmit={handleSubmit} noValidate>
-      <div>Login</div>
+    <div className="padding">
+      <form id="form" onSubmit={handleSubmit} noValidate>
+        <h3>Login</h3>
 
-      <GVFormikField
-        type="email"
-        name="email"
-        label="Email"
-        component={GVTextField}
-      />
-      <GVFormikField
-        type="password"
-        name="password"
-        placeholder="Password"
-        component={GVTextField}
-        adornment={<a href="example.com">forgot?</a>}
-        adornmentPosition="end"
-      />
-      <GVFormikField
-        type="checkbox"
-        color="primary"
-        name="rememberMe"
-        label="remember me?"
-        component={GVSwitch}
-      />
-      <GVButton type="submit" color="primary">
-        Submit
-      </GVButton>
-    </form>
+        <div>
+          <GVFormikField
+            type="email"
+            name="email"
+            label="Email"
+            component={GVTextField}
+          />
+        </div>
+        <div>
+          <GVFormikField
+            type="password"
+            name="password"
+            placeholder="Password"
+            component={GVTextField}
+            adornment={<a href="example.com">forgot?</a>}
+            adornmentPosition="end"
+          />
+        </div>
+        <div>
+          <GVFormikField
+            type="textarea"
+            name="additionalInfo"
+            label="Additional info"
+            autoComplete="off"
+            component={GVTextField}
+            rows={3}
+          />
+        </div>
+        <div style={{ marginBottom: "2rem" }}>
+          <GVFormikField
+            type="checkbox"
+            color="primary"
+            name="rememberMe"
+            label="remember me?"
+            component={GVSwitch}
+          />
+        </div>
+        <div>
+          <GVButton type="submit" color="primary">
+            Submit
+          </GVButton>
+        </div>
+      </form>
+    </div>
   );
 };
 
@@ -117,8 +147,9 @@ const FormFormik = withFormik({
   displayName: "login",
   mapPropsToValues: () => ({
     email: "",
-    password: "",
-    rememberMe: true
+    password: "123",
+    rememberMe: true,
+    additionalInfo: ""
   }),
   validate: values => {
     let errors = {};
@@ -131,6 +162,8 @@ const FormFormik = withFormik({
     }
     if (values.rememberMe === false)
       errors.rememberMe = "rememberMe is required";
+    if (values.additionalInfo.length > 10)
+      errors.additionalInfo = "Please enter less than 10 symbols";
     return errors;
   },
   handleSubmit: (values, { props, setSubmitting }) => {

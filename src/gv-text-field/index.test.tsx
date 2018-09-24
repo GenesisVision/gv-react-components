@@ -2,6 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import GVTextField from ".";
 import NumberFormat from "react-number-format";
+import GVTextArea from "./gv-text-area";
 
 describe("GVTextField tests", () => {
   test("should render text field", () => {
@@ -62,5 +63,10 @@ describe("GVTextField tests", () => {
       <GVTextField name="textInput" InputComponent={NumberFormat} />
     );
     expect(textField.find(NumberFormat)).toHaveLength(1);
+  });
+
+  test("should render Text Area", () => {
+    const textField = shallow(<GVTextField type="textarea" name="textInput" />);
+    expect(textField.find(GVTextArea)).toHaveLength(1);
   });
 });
