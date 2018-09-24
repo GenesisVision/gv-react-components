@@ -36,6 +36,10 @@ body {
   height: 50px;
 }
 
+.period-line {
+  width: 200px;
+}
+
 .color-example {
   display: inline-block;
   width: 50px;

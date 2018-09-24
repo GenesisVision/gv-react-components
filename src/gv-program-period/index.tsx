@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import styles from "./style.scss";
 import moment from "moment";
+import * as GVColors from "../gv-styles/colors";
 
 export interface GVProgramPeriodProps {
   start: Date | number;
   end: Date | number;
   value: Date | number;
+  variant: string;
   className?: string;
+  valueClassName?: string;
 }
 
 export const calcPercent = (
@@ -44,36 +47,59 @@ const GVProgramPeriod: React.SFC<GVProgramPeriodProps> = ({
   start,
   end,
   value,
-  className
+  variant,
+  className,
+  valueClassName
 }) => {
-  return (
-    <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 42 42"
-      className={classnames(styles.programPeriod, className)}
-    >
-      <circle
-        cx="21"
-        cy="21"
-        r="15.91549430918954"
-        fill="transparent"
-        stroke="#2a353f"
-        strokeWidth="3"
-      />
+  const valuePercent = calcPercent(value, start, end);
+  if (variant === "pie")
+    return (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 42 42"
+        className={classnames(
+          styles.gvProgramPeriod,
+          styles.gvProgramPeriodPie,
+          className
+        )}
+      >
+        <circle
+          cx="21"
+          cy="21"
+          r="15.91549430918954"
+          fill="transparent"
+          stroke="#2a353f"
+          strokeWidth="3"
+        />
 
-      <circle
-        cx="21"
-        cy="21"
-        r="15.91549430918954"
-        fill="transparent"
-        stroke="#03bdaf"
-        strokeWidth="6"
-        strokeDasharray={calcDash(calcPercent(value, start, end))}
-        strokeDashoffset={25}
-      />
-    </svg>
-  );
+        <circle
+          cx="21"
+          cy="21"
+          r="15.91549430918954"
+          fill="transparent"
+          stroke={GVColors.$primaryColor}
+          strokeWidth="6"
+          strokeDasharray={calcDash(valuePercent)}
+          strokeDashoffset={25}
+        />
+      </svg>
+    );
+  else
+    return (
+      <div
+        className={classnames(
+          styles.gvProgramPeriod,
+          styles.gvProgramPeriodLine,
+          className
+        )}
+      >
+        <div
+          className={classnames(styles.gvProgramPeriodValue, valueClassName)}
+          style={{ width: `${valuePercent}%` }}
+        />
+      </div>
+    );
 };
 
 GVProgramPeriod.propTypes = {
@@ -83,7 +109,13 @@ GVProgramPeriod.propTypes = {
     .isRequired,
   end: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.number])
     .isRequired,
-  className: PropTypes.string
+  variant: PropTypes.oneOf(["pie", "line"]),
+  className: PropTypes.string,
+  valueClassName: PropTypes.string
+};
+
+GVProgramPeriod.defaultProps = {
+  variant: "pie"
 };
 
 export default GVProgramPeriod;

@@ -1,4 +1,5 @@
 import { calcPercent } from ".";
+
 describe("Period calcs tests", () => {
   describe("number format", () => {
     test("general calculation", () => {
