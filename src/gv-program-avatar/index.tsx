@@ -7,7 +7,7 @@ import GVProgramDefaultAvatar from "./gv-propgram-default-avatar";
 export interface GVProgramAvatarProps {
   url?: string;
   alt: string;
-  level: number;
+  level?: number;
   size?: string;
   className?: string;
   imageClassName?: string;
@@ -53,8 +53,28 @@ class GVProgramAvatar extends React.Component<
     );
   };
 
+  renderLevel = () => {
+    const { level, levelClassName } = this.props;
+    if (level === undefined) return null;
+    return (
+      <span
+        className={classnames(style.programAvatarLevel, levelClassName, {
+          [style.programAvatarLevel1]: level === 1,
+          [style.programAvatarLevel2]: level === 2,
+          [style.programAvatarLevel3]: level === 3,
+          [style.programAvatarLevel4]: level === 4,
+          [style.programAvatarLevel5]: level === 5,
+          [style.programAvatarLevel6]: level === 6,
+          [style.programAvatarLevel7]: level === 7
+        })}
+      >
+        {level}
+      </span>
+    );
+  };
+
   render() {
-    const { level, size, className, levelClassName } = this.props;
+    const { size, className } = this.props;
 
     return (
       <div
@@ -65,19 +85,7 @@ class GVProgramAvatar extends React.Component<
         })}
       >
         {this.renderImage()}
-        <span
-          className={classnames(style.programAvatarLevel, levelClassName, {
-            [style.programAvatarLevel1]: level === 1,
-            [style.programAvatarLevel2]: level === 2,
-            [style.programAvatarLevel3]: level === 3,
-            [style.programAvatarLevel4]: level === 4,
-            [style.programAvatarLevel5]: level === 5,
-            [style.programAvatarLevel6]: level === 6,
-            [style.programAvatarLevel7]: level === 7
-          })}
-        >
-          {level}
-        </span>
+        {this.renderLevel()}
       </div>
     );
   }
@@ -86,7 +94,7 @@ class GVProgramAvatar extends React.Component<
 GVProgramAvatar.propTypes = {
   url: PropTypes.string,
   alt: PropTypes.string.isRequired,
-  level: PropTypes.number.isRequired,
+  level: PropTypes.number,
   size: PropTypes.oneOf(["small", "medium", "big"]),
   className: PropTypes.string,
   imageClassName: PropTypes.string,
