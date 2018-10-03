@@ -9,6 +9,15 @@
   letter-spacing: 0.1px;
   padding: 0 12.5px;
   padding-bottom: 0.2em;
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   &--active {
     color: $text-light-color;
     &::after {
@@ -20,14 +29,6 @@
     }
     a {
       color: $text-light-color;
-    }
-  }
-
-  a {
-    color: $text-color;
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
     }
   }
 }
