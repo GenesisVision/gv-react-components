@@ -10,6 +10,7 @@ export interface GVProgramAvatarProps {
   level?: number;
   size?: string;
   className?: string;
+  color?: string;
   imageClassName?: string;
   levelClassName?: string;
 }
@@ -38,10 +39,10 @@ class GVProgramAvatar extends React.Component<
   };
 
   renderImage = () => {
-    const { url, alt, imageClassName } = this.props;
+    const { url, alt, color, imageClassName } = this.props;
     if (this.state.errored || url === undefined || url === null)
       return (
-        <GVProgramDefaultAvatar title={alt} imageClassName={imageClassName} />
+        <GVProgramDefaultAvatar color={color} imageClassName={imageClassName} />
       );
     return (
       <img
@@ -96,6 +97,7 @@ GVProgramAvatar.propTypes = {
   alt: PropTypes.string.isRequired,
   level: PropTypes.number,
   size: PropTypes.oneOf(["small", "medium", "big"]),
+  color: PropTypes.string,
   className: PropTypes.string,
   imageClassName: PropTypes.string,
   levelClassName: PropTypes.string
