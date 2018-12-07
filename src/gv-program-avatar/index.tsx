@@ -13,6 +13,10 @@ export interface GVProgramAvatarProps {
   color?: string;
   imageClassName?: string;
   levelClassName?: string;
+  onMouseOverLevel?: (e: any) => void;
+  onMouseEnterLevel?: (e: any) => void;
+  onMouseLeaveLevel?: (e: any) => void;
+  onClickLevel?: (e: any) => void;
 }
 
 export interface GVProgramAvatarState {
@@ -55,10 +59,14 @@ class GVProgramAvatar extends React.Component<
   };
 
   renderLevel = () => {
-    const { level, levelClassName } = this.props;
+    const { level, levelClassName, onMouseOverLevel,  onMouseEnterLevel,  onMouseLeaveLevel,  onClickLevel, } = this.props;
     if (level === undefined) return null;
     return (
       <span
+        onMouseOver={onMouseOverLevel}
+        onMouseEnter={onMouseEnterLevel}
+        onMouseLeave={onMouseLeaveLevel}
+        onClick={onClickLevel}
         className={classnames(style.programAvatarLevel, levelClassName, {
           [style.programAvatarLevel1]: level === 1,
           [style.programAvatarLevel2]: level === 2,
