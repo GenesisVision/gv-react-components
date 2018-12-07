@@ -1,6 +1,6 @@
 {
   "name": "gv-react-components",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "styles": "dist/index.css",
@@ -10,7 +10,12 @@
     "type": "git",
     "url": "https://github.com/GenesisVision/gv-react-components.git"
   },
-  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
+  "keywords": [
+    "TypeScript",
+    "Storybook",
+    "StoryShots",
+    "React"
+  ],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
