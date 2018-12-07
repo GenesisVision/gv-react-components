@@ -10,18 +10,13 @@
     "type": "git",
     "url": "https://github.com/GenesisVision/gv-react-components.git"
   },
-  "keywords": [
-    "TypeScript",
-    "Storybook",
-    "StoryShots",
-    "React"
-  ],
+  "keywords": ["TypeScript", "Storybook", "StoryShots", "React"],
   "scripts": {
     "format": "prettier --write 'src/**/*'",
     "test": "jest",
-    "type-sass": "atsm -p src/**/*.scss -c",
-    "copy-sass": "cpx src/**/*.scss dist",
-    "copy-assets": "cpx 'assets/**/*.*' 'dist/assets'",
+    "type-sass": "atsm -p \"src/**/*.scss\" -c",
+    "copy-sass": "cpx \"src/**/*.scss\" dist",
+    "copy-assets": "cpx \"assets/**/*.*\" \"dist/assets\"",
     "prebuild": "rimraf dist && yarn type-sass && yarn copy-sass",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
