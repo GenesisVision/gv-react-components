@@ -59,7 +59,14 @@ class GVProgramAvatar extends React.Component<
   };
 
   renderLevel = () => {
-    const { level, levelClassName, onMouseOverLevel,  onMouseEnterLevel,  onMouseLeaveLevel,  onClickLevel, } = this.props;
+    const {
+      level,
+      levelClassName,
+      onMouseOverLevel,
+      onMouseEnterLevel,
+      onMouseLeaveLevel,
+      onClickLevel
+    } = this.props;
     if (level === undefined) return null;
     return (
       <span

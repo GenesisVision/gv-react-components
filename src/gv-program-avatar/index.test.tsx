@@ -36,7 +36,12 @@ describe("GVProgramAvatar tests", () => {
   test("should call click event", () => {
     const handleClick = jest.fn();
     const programAvatar = shallow(
-      <GVProgramAvatar url="example.com/image.jpg" alt="avatar" level={1}  onClickLevel={handleClick}/>
+      <GVProgramAvatar
+        url="example.com/image.jpg"
+        alt="avatar"
+        level={1}
+        onClickLevel={handleClick}
+      />
     );
     programAvatar.find(`.${style.programAvatarLevel}`).simulate("click");
     expect(handleClick).toBeCalled();
@@ -45,7 +50,12 @@ describe("GVProgramAvatar tests", () => {
   test("should call enter event", () => {
     const handleEnter = jest.fn();
     const programAvatar = shallow(
-      <GVProgramAvatar url="example.com/image.jpg" alt="avatar" level={1}  onMouseEnterLevel={handleEnter}/>
+      <GVProgramAvatar
+        url="example.com/image.jpg"
+        alt="avatar"
+        level={1}
+        onMouseEnterLevel={handleEnter}
+      />
     );
     programAvatar.find(`.${style.programAvatarLevel}`).simulate("mouseEnter");
     expect(handleEnter).toBeCalled();
@@ -54,7 +64,12 @@ describe("GVProgramAvatar tests", () => {
   test("should call over event", () => {
     const handleOver = jest.fn();
     const programAvatar = shallow(
-      <GVProgramAvatar url="example.com/image.jpg" alt="avatar" level={1}  onMouseOverLevel={handleOver}/>
+      <GVProgramAvatar
+        url="example.com/image.jpg"
+        alt="avatar"
+        level={1}
+        onMouseOverLevel={handleOver}
+      />
     );
     programAvatar.find(`.${style.programAvatarLevel}`).simulate("mouseOver");
     expect(handleOver).toBeCalled();
@@ -63,7 +78,12 @@ describe("GVProgramAvatar tests", () => {
   test("should call leave event", () => {
     const handleLeave = jest.fn();
     const programAvatar = shallow(
-      <GVProgramAvatar url="example.com/image.jpg" alt="avatar" level={1}  onMouseLeaveLevel={handleLeave}/>
+      <GVProgramAvatar
+        url="example.com/image.jpg"
+        alt="avatar"
+        level={1}
+        onMouseLeaveLevel={handleLeave}
+      />
     );
     programAvatar.find(`.${style.programAvatarLevel}`).simulate("mouseLeave");
     expect(handleLeave).toBeCalled();
