@@ -25,6 +25,46 @@ storiesOf("Program Avatar", module).add(
         />
         Default / Broken url
       </div>
+      <div className="flex vertical-center padding">
+        <GVProgramAvatar
+          url="https://example.com/1.png"
+          level={7}
+          alt="John Smith"
+          color="#abc"
+          onMouseEnterLevel={e=>console.log("Enter", e.target)}
+        />
+        Enter level
+      </div>
+      <div className="flex vertical-center padding">
+        <GVProgramAvatar
+          url="https://example.com/1.png"
+          level={7}
+          alt="John Smith"
+          color="#abc"
+          onMouseOverLevel={e=>console.log("Over", e.target)}
+        />
+        Hover level
+      </div>
+      <div className="flex vertical-center padding">
+        <GVProgramAvatar
+          url="https://example.com/1.png"
+          level={7}
+          alt="John Smith"
+          color="#abc"
+          onMouseLeaveLevel={e=>console.log("Leave", e.target)}
+        />
+        Leave level
+      </div>
+      <div className="flex vertical-center padding">
+        <GVProgramAvatar
+          url="https://example.com/1.png"
+          level={7}
+          alt="John Smith"
+          color="#abc"
+          onClickLevel={e=>console.log("Click", e.target)}
+        />
+        Click level
+      </div>
     </div>
   ))
 );
