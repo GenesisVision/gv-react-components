@@ -52,7 +52,6 @@ const GVTab: React.SFC<GVTabProps> = ({
     >
       {label}
       {renderCount()}
-      <span />
     </div>
   );
 };
