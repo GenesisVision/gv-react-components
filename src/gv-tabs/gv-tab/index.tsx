@@ -7,8 +7,10 @@ import style from "./style.scss";
 export interface GVTabProps {
   label: React.ReactNode;
   value: string;
+  count?: number;
   selected?: boolean;
   className?: string;
+  countClassName?: string;
   onChange?: (e: React.SyntheticEvent<EventTarget>, value: string) => void;
   onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -16,8 +18,10 @@ export interface GVTabProps {
 const GVTab: React.SFC<GVTabProps> = ({
   label,
   value,
+  count,
   selected,
   className,
+  countClassName,
   onChange,
   onClick
 }) => {
@@ -30,6 +34,18 @@ const GVTab: React.SFC<GVTabProps> = ({
     }
   };
 
+  const renderCount = () => {
+    if (count) {
+      return (
+        <span className={classnames(countClassName, style.gvTabCount)}>
+          {count}
+        </span>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div
       className={classnames(className || style.gvTab, {
@@ -38,6 +54,8 @@ const GVTab: React.SFC<GVTabProps> = ({
       onClick={handleChange}
     >
       {label}
+      {renderCount()}
+      <span />
     </div>
   );
 };
@@ -47,6 +65,7 @@ GVTab.propTypes = {
   value: PropTypes.string.isRequired,
   selected: PropTypes.bool,
   className: PropTypes.string,
+  countClassName: PropTypes.string,
   onChange: PropTypes.func,
   onClick: PropTypes.func
 };

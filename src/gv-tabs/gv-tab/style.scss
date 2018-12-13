@@ -9,6 +9,17 @@
   letter-spacing: 0.1px;
   padding: 0 12.5px;
   padding-bottom: 0.2em;
+  &__count {
+    display: inline-block;
+    text-align: center;
+    min-width: 8px;
+    margin-left: 6px;
+    margin-bottom: -4px;
+    padding: 4px 7px;
+    border-radius: 6px;
+    line-height: 1;
+    background-color: rgba($secondary-color, 0.5);
+  }
 
   a {
     color: $text-color;
@@ -20,6 +31,10 @@
 
   &--active {
     color: $text-light-color;
+    .gv-tab__count {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+    }
     &::after {
       content: "";
       display: block;

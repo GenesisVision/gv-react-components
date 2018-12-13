@@ -22,6 +22,27 @@ describe("GVTab tests", () => {
     expect(gvTab.find(`.${tabActiveClass}`)).toHaveLength(1);
   });
 
+  test("should have count", () => {
+    const count = 1;
+    const countClass = "gvTabCount";
+    const gvTab = shallow(<GVTab count={count} value="tab" label="tab" />);
+    expect(gvTab.find(`.${countClass}`).text()).toBe(`${count}`);
+  });
+
+  test("should have count Class", () => {
+    const count = 1;
+    const countClass = "countClassName";
+    const gvTab = shallow(
+      <GVTab
+        count={count}
+        value="tab"
+        label="tab"
+        countClassName={countClass}
+      />
+    );
+    expect(gvTab.find(`.${countClass}`)).toHaveLength(1);
+  });
+
   test("should call click event", () => {
     const handleClick = jest.fn();
     const gvTab = shallow(
