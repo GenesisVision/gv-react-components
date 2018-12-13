@@ -29,6 +29,13 @@ describe("GVTab tests", () => {
     expect(gvTab.find(`.${countClass}`).text()).toBe(`${count}`);
   });
 
+  test("should have zero count", () => {
+    const count = 0;
+    const countClass = "gvTabCount";
+    const gvTab = shallow(<GVTab count={count} value="tab" label="tab" />);
+    expect(gvTab.find(`.${countClass}`).text()).toBe(`${count}`);
+  });
+
   test("should have count Class", () => {
     const count = 1;
     const countClass = "countClassName";

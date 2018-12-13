@@ -35,15 +35,12 @@ const GVTab: React.SFC<GVTabProps> = ({
   };
 
   const renderCount = () => {
-    if (count) {
-      return (
-        <span className={classnames(countClassName, style.gvTabCount)}>
-          {count}
-        </span>
-      );
-    }
-
-    return null;
+    if (count === undefined) return null;
+    return (
+      <span className={classnames(countClassName, style.gvTabCount)}>
+        {count}
+      </span>
+    );
   };
 
   return (
