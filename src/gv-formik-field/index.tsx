@@ -5,6 +5,7 @@ import { Field } from "formik";
 export interface GVFormikFieldProps {
   component: any;
   name: string;
+  [key: string]: any;
 }
 
 const GVFormikField: React.SFC<GVFormikFieldProps> = ({
