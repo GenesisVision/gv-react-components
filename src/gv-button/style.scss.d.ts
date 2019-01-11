@@ -1,4 +1,5 @@
 export const gvBtn: string;
+export const gvBtnNoPadding: string;
 export const gvBtnPrimary: string;
 export const gvBtnSecondary: string;
 export const gvBtnText: string;

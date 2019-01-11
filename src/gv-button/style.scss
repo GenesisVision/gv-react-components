@@ -17,6 +17,10 @@
   color: $text-accent-color;
   background-color: transparent;
 
+  &--no-padding {
+    padding: 0;
+  }
+
   &:not(:disabled) {
     cursor: pointer;
   }
