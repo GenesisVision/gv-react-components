@@ -21,6 +21,7 @@ const GVFormikField: React.SFC<GVFormikFieldProps> = ({
           <Component
             {...field}
             {...props}
+            form={form}
             touched={form.touched[field.name]}
             error={form.errors[field.name]}
           />

@@ -22,7 +22,7 @@ export interface GVTextFieldProps {
   errorClassName?: string;
   adornmentClassName?: string;
   onBlur?: (e: any) => void;
-  onChange?: (e: any) => void;
+  onChange?: (e: React.ChangeEvent<any>) => void;
 }
 
 export interface GVTextFieldState {
@@ -118,7 +118,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
       adornmentPosition,
       ...otherProps
     } = this.props;
-    let Input;
+    let Input: React.ComponentType<any> | string;
     switch (type) {
       case "textarea":
         Input = GVTextArea;
