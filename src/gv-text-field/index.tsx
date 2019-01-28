@@ -23,6 +23,7 @@ export interface GVTextFieldProps {
   adornmentClassName?: string;
   onBlur?: (e: any) => void;
   onChange?: (e: React.ChangeEvent<any>) => void;
+  form?: any;
 }
 
 export interface GVTextFieldState {
@@ -116,6 +117,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
       InputComponent,
       adornment,
       adornmentPosition,
+      form,
       ...otherProps
     } = this.props;
     let Input: React.ComponentType<any> | string;
