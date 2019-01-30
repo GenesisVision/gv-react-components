@@ -7,7 +7,7 @@ import GVProgramAvatar, { GVProgramDefaultAvatar } from "./gv-program-avatar";
 import GVTextField from "./gv-text-field";
 import GVFormikField from "./gv-formik-field";
 
-import GVProgramPeriod from "./gv-program-period";
+import GVProgress from "./gv-program-period";
 import * as GVColors from "./gv-styles/colors";
 
 import "./gv-styles/styles.scss";
@@ -24,6 +24,6 @@ export {
   GVFormikField,
   GVTextField,
   GVSwitch,
-  GVProgramPeriod,
+  GVProgress as GVProgramPeriod,
   GVColors
 };

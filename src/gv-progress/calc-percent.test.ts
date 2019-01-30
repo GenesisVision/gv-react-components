@@ -1,4 +1,4 @@
-import { calcPercent } from ".";
+import { calcPercent } from "./calc-percent";
 
 describe("Period calcs tests", () => {
   describe("number format", () => {
