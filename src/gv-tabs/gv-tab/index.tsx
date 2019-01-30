@@ -9,6 +9,7 @@ export interface GVTabProps {
   value: string;
   count?: number;
   selected?: boolean;
+  visible?: boolean;
   className?: string;
   countClassName?: string;
   onChange?: (e: React.SyntheticEvent<EventTarget>, value: string) => void;
@@ -20,6 +21,7 @@ const GVTab: React.SFC<GVTabProps> = ({
   value,
   count,
   selected,
+  visible = true,
   className,
   countClassName,
   onChange,
@@ -43,6 +45,10 @@ const GVTab: React.SFC<GVTabProps> = ({
     );
   };
 
+  if (!visible) {
+    return null;
+  }
+
   return (
     <div
       className={classnames(className || style.gvTab, {
@@ -60,10 +66,15 @@ GVTab.propTypes = {
   label: PropTypes.node.isRequired,
   value: PropTypes.string.isRequired,
   selected: PropTypes.bool,
+  visible: PropTypes.bool,
   className: PropTypes.string,
   countClassName: PropTypes.string,
   onChange: PropTypes.func,
   onClick: PropTypes.func
+};
+
+GVTab.defaultProps = {
+  visible: true
 };
 
 export default GVTab;

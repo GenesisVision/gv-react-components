@@ -22,6 +22,12 @@ describe("GVTab tests", () => {
     expect(gvTab.find(`.${tabActiveClass}`)).toHaveLength(1);
   });
 
+  test("should not be rendered", () => {
+    const tabClass = "gvTab";
+    const gvTab = shallow(<GVTab label="tab" value="tab" visible={false} />);
+    expect(gvTab.find(`.${tabClass}`)).toHaveLength(0);
+  });
+
   test("should have count", () => {
     const count = 1;
     const countClass = "gvTabCount";
