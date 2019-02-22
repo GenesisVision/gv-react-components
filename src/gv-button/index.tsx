@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 import style from "./style.scss";
 
 export interface GVButtonProps {
-  variant?: string;
-  color?: string;
+  id?: string;
   title?: string;
-  type?: string;
+  variant?: "text" | "outlined" | "contained";
+  color?: "primary" | "secondary";
+  type?: "button" | "submit";
   className?: string;
   disabled?: boolean;
   onClick?: () => void;
@@ -15,6 +16,7 @@ export interface GVButtonProps {
 }
 
 const GVButton: React.SFC<GVButtonProps> = ({
+  id,
   className,
   title,
   variant,
@@ -33,6 +35,7 @@ const GVButton: React.SFC<GVButtonProps> = ({
   });
   return (
     <button
+      id={id}
       disabled={disabled}
       className={classname}
       onClick={onClick}
