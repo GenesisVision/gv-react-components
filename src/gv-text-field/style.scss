@@ -82,6 +82,12 @@
     &:disabled {
       color: $text-dark-color;
     }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0 30px $secondary-background-color inset;
+    }
   }
 
   &__label {
