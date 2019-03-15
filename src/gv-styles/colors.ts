@@ -14,6 +14,7 @@ export const $switchHandlerColor = $textAccentColor;
 export const $separatorColor = "#28323b";
 
 export const $backgroundColor = "#131e26";
+export const $secondaryBackgroundColor = "#1f2b36";
 export const $panelBackgroundColor = "#1c2730";
 export const $positiveBackgroundColor = "#1d383a";
 export const $negativeBackgroundColor = "#312934";
