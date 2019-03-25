@@ -8,7 +8,7 @@ export interface GVTextFieldProps {
   name: string;
   type?: string;
   label?: string;
-  value?: string;
+  value?: string | number;
   touched?: boolean;
   error?: string;
   InputComponent: React.ComponentType<any> | string;
@@ -32,7 +32,11 @@ export interface GVTextFieldState {
 
 class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
   static propTypes: any;
-  static defaultProps: any;
+  static defaultProps: Partial<GVTextFieldProps> = {
+    type: "text",
+    adornmentPosition: "end",
+    InputComponent: "input"
+  };
 
   constructor(props: GVTextFieldProps) {
     super(props);
@@ -78,7 +82,7 @@ class GVTextField extends React.Component<GVTextFieldProps, GVTextFieldState> {
             [style.gvTextFieldLabelShrink]:
               this.state.focused ||
               this.props.adornment ||
-              (this.props.value && this.props.value.length > 0)
+              (this.props.value !== undefined && this.props.value !== "")
           }
         )}
       >
@@ -169,7 +173,7 @@ GVTextField.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   touched: PropTypes.bool,
   error: PropTypes.string,
   InputComponent: PropTypes.oneOfType([
